@@ -10,6 +10,7 @@ public class TestContoller {
 	
 	@GetMapping("/")
 	public String test(){
+		System.out.println("hello");
 		return "test";
 	}
 }

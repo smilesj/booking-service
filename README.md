@@ -6,4 +6,4 @@
 - 프레임워크 : vue.js
 
 2. BE
-- spring4, mysql, mybatis, gradle, apache tiles, jsp
+- spring4, mysql, mybatis, gradle, apache tiles, jsp, tomcat9

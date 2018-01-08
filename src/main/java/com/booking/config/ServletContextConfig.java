@@ -27,24 +27,24 @@ public class ServletContextConfig extends WebMvcConfigurerAdapter {
 		return viewResolver;
 	}
 	
-//    @Bean
-//    public UrlBasedViewResolver urlBasedViewResolver() {
-//       UrlBasedViewResolver resolver = new UrlBasedViewResolver();
-//       resolver.setViewClass(TilesView.class);
-//       resolver.setOrder(1);     
-//       return resolver;
-//    }
-//    
-//    @Bean
-//    public TilesConfigurer tilesConfigurer() {
-//       TilesConfigurer tilesConfigurer = new TilesConfigurer();
-//       tilesConfigurer.setDefinitions(new String[] {"/WEB-INF/tiles.xml"});    
-//       return tilesConfigurer;
-//    }
+    @Bean
+    public UrlBasedViewResolver urlBasedViewResolver() {
+       UrlBasedViewResolver resolver = new UrlBasedViewResolver();
+       resolver.setViewClass(TilesView.class);
+       resolver.setOrder(1);     
+       return resolver;
+    }
+    
+    @Bean
+    public TilesConfigurer tilesConfigurer() {
+       TilesConfigurer tilesConfigurer = new TilesConfigurer();
+       tilesConfigurer.setDefinitions(new String[] {"/WEB-INF/tiles.xml"});    
+       return tilesConfigurer;
+    }
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
 		// registry.addResourceHandler("/views/**").addResourceLocations("/WEB-INF/view/");
 		// // webapp/resources 경로를 의미
 

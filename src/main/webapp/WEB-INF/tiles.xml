@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+	
+<tiles-definitions>
+
+	<!-- Default Layout -->
+	<definition name="base-definition" template="/WEB-INF/views/test/layout.jsp">
+        <put-attribute name="title" value="타일즈 테스트" />
+        <put-attribute name="header" value="/WEB-INF/views/test/header.jsp" />
+        
+        <put-attribute name="content" value="list" type="difinition"/>
+		
+        <put-attribute name="footer" value="/WEB-INF/views/test/footer.jsp" />
+	</definition>
+	
+	
+	<!-- Main Content -->
+	<definition name="home" extends="base-definition">
+		<put-attribute name="a" value="/WEB-INF/views/test/a.jsp" />
+	</definition>
+	
+	<definition name="" template="">
+		
+	</definition>
+	
+	
+	<!-- Detail Content -->
+	<definition name="list" extends="base-definition">
+        <put-attribute name="b" value="/WEB-INF/views/test/b.jsp" />
+        <put-attribute name="c" value="/WEB-INF/views/test/c.jsp" />
+	</definition>
+	
+</tiles-definitions>

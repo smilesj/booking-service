@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class TestContorller {
 	
-	@GetMapping("/")
-	public String test(){
-		System.out.println("hello");
-		return "test";
+	@GetMapping("/main")
+	public String testMain(){
+		return "home";
+	}
+	
+	@GetMapping("/list")
+	public String testList(){
+		return "list";
 	}
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html lang="ko">
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<!DOCTYPE html>
 
 <head>
     <meta charset="utf-8">
@@ -11,7 +12,8 @@
 
 <body>
     <div id="container">
-    
-    
+    	<tiles:insertAttribute name="header" />
+    	<tiles:insertAttribute name="content" />
+    	<tiles:insertAttribute name="footer" />
 	</div>
 </body>

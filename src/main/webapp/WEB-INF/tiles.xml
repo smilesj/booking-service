@@ -33,5 +33,5 @@
 	<definition name="list" extends="base-definition">
 		<put-attribute name="content" value="content2" />
 	</definition>
-	
+		
 </tiles-definitions>

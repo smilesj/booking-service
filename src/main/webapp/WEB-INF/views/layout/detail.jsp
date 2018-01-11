@@ -5,11 +5,11 @@
         <div class="ct main">
             <div>
                 <tiles:insertAttribute name="title" />
-                <tiles:insertAttribute name="product-information" />
+                <tiles:insertAttribute name="productInformation" />
                 <tiles:insertAttribute name="event" />   
                 <div class="section_btn"> <button type="button" class="bk_btn"> <i class="fn fn-nbooking-calender2"></i> <span>예매하기</span> </button> </div>
 				<tiles:insertAttribute name="review" /> 
-                <tiles:insertAttribute name="detail-information" /> 
+                <tiles:insertAttribute name="detailInformation" /> 
             </div>
         </div>
     <div id="photoviwer"></div>

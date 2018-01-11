@@ -3,5 +3,5 @@
 <!DOCTYPE html>
 <div class="event">
 	<tiles:insertAttribute name="promotion" />
-	<tiles:insertAttribute name="product-list" />
+	<tiles:insertAttribute name="productList" />
 </div>

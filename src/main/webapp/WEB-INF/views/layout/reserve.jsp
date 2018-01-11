@@ -7,9 +7,9 @@
              <a href="#" class="btn_back" title="이전 화면으로 이동"> <i class="fn fn-backward1"></i> </a>
              <h2><span class="title">클림트 인사이드</span></h2>
          </div>
-         <tiles:insertAttribute nmae="title"/>
+         <tiles:insertAttribute name="title"/>
 		 <tiles:insertAttribute name="productDetails"/>
-         <tiles:insertAttribute name="bookingCount" />
+         <tiles:insertAttribute name="bookingTicket" />
          <tiles:insertAttribute name="bookingForm" />
          <div class="box_bk_btn">
              <!-- [D] 약관 전체 동의가 되면 disable 제거 -->

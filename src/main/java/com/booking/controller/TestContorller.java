@@ -18,8 +18,23 @@ public class TestContorller {
 		return "myreservation";
 	}
 	
-	@GetMapping("/list2")
-	public String testList2(){
-		return "list2";
+	@GetMapping("/detail")
+	public String detail(){
+		return "detail";
+	}
+	
+	@GetMapping("/reserve")
+	public String reserve(){
+		return "reserve";
+	}
+	
+	@GetMapping("/review")
+	public String review(){
+		return "review";
+	}
+	
+	@GetMapping("/reviewWrite")
+	public String reviewWrite(){
+		return "reviewWrite";
 	}
 }

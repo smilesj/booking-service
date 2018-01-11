@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class TestContorller {
 	
-	@GetMapping("/main")
+	@GetMapping("/")
 	public String testMain(){
 		return "home";
 	}

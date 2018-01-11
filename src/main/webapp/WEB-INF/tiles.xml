@@ -6,32 +6,41 @@
 
 	<!-- Default Layout -->
 	<definition name="base-definition" template="/WEB-INF/views/test/layout.jsp">
-        <put-attribute name="title" value="타일즈 테스트" />
-        <put-attribute name="header" value="/WEB-INF/views/test/header.jsp" />
-		
-        <put-attribute name="footer" value="/WEB-INF/views/test/footer.jsp" />
+        <put-attribute name="title" value="네이버 예약시스템" />
+        <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+        <put-attribute name="js" value="/WEB-INF/views/common/js.jsp" />
 	</definition>
 	
-	<definition name="content1" template="/WEB-INF/views/test/content1.jsp">
-		<put-attribute name="a" value="/WEB-INF/views/test/a.jsp" />
-		<put-attribute name="b" value="/WEB-INF/views/test/b.jsp" />
+	<!-- Review List Page Content -->
+	<definition name="review.content" template="/WEB-INF/views/layout/review.jsp">
+		<put-attribute name="grade" value="/WEB-INF/views/review/grade.jsp" />
+		<put-attribute name="reviewList" value="/WEB-INF/views/review/reviewList.jsp" />
 	</definition>
 	
-	<definition name="content2" template="/WEB-INF/views/test/content2.jsp">
-		<!-- <put-attribute name="a" value="/WEB-INF/views/test/a.jsp" /> -->
-		<put-attribute name="c" value="/WEB-INF/views/test/b.jsp" />
-	</definition>
-	
-	
-	<!-- Main Content -->
-	<definition name="home" extends="base-definition">
-		<put-attribute name="content" value="content1"/>
+	<!-- My Reservation Page Content -->
+	<definition name="myresrvation.content" template="/WEB-INF/views/layout/myreservation.jsp">
+		<put-attribute name="mySummary" value="/WEB-INF/views/myreservation/mySummary.jsp" />
+		<put-attribute name="myreservationList" value="/WEB-INF/views/myreservation/myreservationList.jsp" />
+		<put-attribute name="canclePopup" value="/WEB-INF/views/myreservation/canclePopup.jsp" />
 	</definition>
 	
 	
-	<!-- Detail Content -->
-	<definition name="list" extends="base-definition">
-		<put-attribute name="content" value="content2" />
+	<!-- Review List Page -->
+	<definition name="review" extends="base-definition">
+		<put-attribute name="content" value="review.content"/>
+	</definition>
+	
+	
+	<!-- Review Write Page -->
+	<definition name="reviewWrite" extends="base-definition">
+		<put-attribute name="content" value="WEB-INF/views/layout/reviewWrite.jsp"/>
+	</definition>
+	
+	
+	<!-- My Reservation Page -->
+	<definition name="myreservation" extends="base-definition">
+		<put-attribute name="content" value="myreservation.content"/>
 	</definition>
 	
 </tiles-definitions>

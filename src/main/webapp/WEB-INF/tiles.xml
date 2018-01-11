@@ -52,6 +52,21 @@
 		<put-attribute name="myreservationList" value="/WEB-INF/views/myreservation/myreservationList.jsp" />
 		<put-attribute name="canclePopup" value="/WEB-INF/views/myreservation/canclePopup.jsp" />
 	</definition>
+	
+	<!-- Review List Page -->
+	<definition name="main" extends="base-definition">
+		<put-attribute name="content" value="main.content"/>
+	</definition>
+		
+	<!-- Review Write Page -->
+	<definition name="detail" extends="base-definition">
+		<put-attribute name="content" value="detail.content"/>
+	</definition>	
+	
+	<!-- My Reservation Page -->
+	<definition name="reserve" extends="base-definition">
+		<put-attribute name="content" value="reserve.content"/>
+	</definition>
 		
 	<!-- Review List Page -->
 	<definition name="review" extends="base-definition">

@@ -28,14 +28,6 @@ public class ServletContextConfig extends WebMvcConfigurerAdapter {
 		return viewResolver;
 	}
 	
-//    @Bean
-//    public UrlBasedViewResolver urlBasedViewResolver() {
-//       UrlBasedViewResolver resolver = new UrlBasedViewResolver();
-//       resolver.setViewClass(TilesView.class);
-//       resolver.setOrder(1);     
-//       return resolver;
-//    }
-	
 	@Bean
     public TilesViewResolver tilesViewResolver() {
 		TilesViewResolver resolver = new TilesViewResolver();
@@ -53,10 +45,8 @@ public class ServletContextConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		// /webapp/static 경로를 의미
 		registry.addResourceHandler("/static/**").addResourceLocations("//static/");
-		// registry.addResourceHandler("/views/**").addResourceLocations("/WEB-INF/view/");
-		// // webapp/resources 경로를 의미
-
 	}
 
 //	@Bean

@@ -43,5 +43,8 @@ dependencies {
 	
 	//DBCP
 	compile 'org.apache.commons:commons-dbcp2:2.1.1'
+	
+	// lombok
+	compile 'org.projectlombok:lombok:1.16.6'
 }
 

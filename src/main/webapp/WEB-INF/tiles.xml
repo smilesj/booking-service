@@ -5,18 +5,18 @@
 <tiles-definitions>
 
 	<!-- Default Layout -->
-	<definition name="base-definition" template="/WEB-INF/views/test/layout.jsp">
+	<definition name="base-definition" template="/WEB-INF/views/layout.jsp">
         <put-attribute name="title" value="네이버 예약시스템" />
-        <put-attribute name="css" value="/WEB-INF/views/common/css.jsp" />
-        <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+    <!--     <put-attribute name="css" value="/WEB-INF/views/common/css.jsp" /> -->
+        <put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
         <put-attribute name="js" value="/WEB-INF/views/common/js.jsp" />
 	</definition>
 	
 	<!-- Main Page Content -->
 	<definition name="main.content" template="/WEB-INF/views/layout/mainpage.jsp">
-		<put-attribute name="promotion" value="/WEB-INF/views/mainpage/promotion.jsp" />
-		<put-attribute name="productList" value="/WEB-INF/views/mainpage/productList.jsp" />
+		<put-attribute name="promotion" value="/WEB-INF/views/mainpage/promotion.jsp"/>
+		<put-attribute name="productList" value="/WEB-INF/views/mainpage/productList.jsp"/>
 	</definition>
 	
 	<!-- Detail Page Content -->

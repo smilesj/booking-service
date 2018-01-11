@@ -45,6 +45,7 @@ public class ServletContextConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+		
 		// registry.addResourceHandler("/views/**").addResourceLocations("/WEB-INF/view/");
 		// // webapp/resources 경로를 의미
 

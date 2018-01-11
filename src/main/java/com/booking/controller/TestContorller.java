@@ -10,12 +10,12 @@ public class TestContorller {
 	
 	@GetMapping("/")
 	public String testMain(){
-		return "home";
+		return "main";
 	}
 	
-	@GetMapping("/list")
+	@GetMapping("/myreservation")
 	public String testList(){
-		return "list";
+		return "myreservation";
 	}
 	
 	@GetMapping("/list2")

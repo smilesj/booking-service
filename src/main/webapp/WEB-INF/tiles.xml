@@ -12,6 +12,29 @@
         <put-attribute name="js" value="/WEB-INF/views/common/js.jsp" />
 	</definition>
 	
+	<!-- Main Page Content -->
+	<definition name="main.content" template="/WEB-INF/views/layout/mainpage.jsp">
+		<put-attribute name="promotion" value="/WEB-INF/views/mainpage/promotion.jsp" />
+		<put-attribute name="productList" value="/WEB-INF/views/mainpage/productList.jsp" />
+	</definition>
+	
+	<!-- Detail Page Content -->
+	<definition name="detail.content" template="/WEB-INF/views/layout/detail.jsp">
+		<put-attribute name="title" value="/WEB-INF/views/detail/promotion.jsp" />
+		<put-attribute name="productInformation" value="/WEB-INF/views/detail/productInformation.jsp" />
+		<put-attribute name="event" value="/WEB-INF/views/detail/event.jsp" />
+		<put-attribute name="review" value="/WEB-INF/views/detail/review.jsp" />
+		<put-attribute name="detailInformation" value="/WEB-INF/views/detail/detailInformation.jsp" />	
+	</definition>	
+	
+	<!-- Reserve Page Content -->
+	<definition name="reserve.content" template="/WEB-INF/views/layout/reserve.jsp">
+		<put-attribute name="title" value="/WEB-INF/views/reserve/title.jsp" />
+		<put-attribute name="productDetails" value="/WEB-INF/views/reserve/productDetails.jsp" />
+		<put-attribute name="bookingTicket" value="/WEB-INF/views/reserve/bookingTicket.jsp" />
+		<put-attribute name="bookingForm" value="/WEB-INF/views/reserve/bookingForm.jsp" />	
+	</definition>
+	
 	<!-- Review List Page Content -->
 	<definition name="review.content" template="/WEB-INF/views/layout/review.jsp">
 		<put-attribute name="grade" value="/WEB-INF/views/review/grade.jsp" />
@@ -24,19 +47,16 @@
 		<put-attribute name="myreservationList" value="/WEB-INF/views/myreservation/myreservationList.jsp" />
 		<put-attribute name="canclePopup" value="/WEB-INF/views/myreservation/canclePopup.jsp" />
 	</definition>
-	
-	
+		
 	<!-- Review List Page -->
 	<definition name="review" extends="base-definition">
 		<put-attribute name="content" value="review.content"/>
 	</definition>
-	
-	
+		
 	<!-- Review Write Page -->
 	<definition name="reviewWrite" extends="base-definition">
 		<put-attribute name="content" value="WEB-INF/views/layout/reviewWrite.jsp"/>
-	</definition>
-	
+	</definition>	
 	
 	<!-- My Reservation Page -->
 	<definition name="myreservation" extends="base-definition">

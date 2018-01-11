@@ -12,6 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration
 @EnableWebMvc
@@ -27,12 +28,20 @@ public class ServletContextConfig extends WebMvcConfigurerAdapter {
 		return viewResolver;
 	}
 	
-    @Bean
-    public UrlBasedViewResolver urlBasedViewResolver() {
-       UrlBasedViewResolver resolver = new UrlBasedViewResolver();
-       resolver.setViewClass(TilesView.class);
-       resolver.setOrder(1);     
-       return resolver;
+//    @Bean
+//    public UrlBasedViewResolver urlBasedViewResolver() {
+//       UrlBasedViewResolver resolver = new UrlBasedViewResolver();
+//       resolver.setViewClass(TilesView.class);
+//       resolver.setOrder(1);     
+//       return resolver;
+//    }
+	
+	@Bean
+    public TilesViewResolver tilesViewResolver() {
+		TilesViewResolver resolver = new TilesViewResolver();
+        resolver.setViewClass(TilesView.class);
+        resolver.setOrder(1);     
+        return resolver;
     }
     
     @Bean
@@ -44,7 +53,7 @@ public class ServletContextConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+		registry.addResourceHandler("/static/**").addResourceLocations("//static/");
 		// registry.addResourceHandler("/views/**").addResourceLocations("/WEB-INF/view/");
 		// // webapp/resources 경로를 의미
 

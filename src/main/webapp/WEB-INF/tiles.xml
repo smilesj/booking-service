@@ -5,7 +5,7 @@
 <tiles-definitions>
 
 	<!-- Default Layout -->
-	<definition name="base-definition" template="/WEB-INF/views/test/layout.jsp">
+	<definition name="base-definition" template="/WEB-INF/views/layout.jsp">
         <put-attribute name="title" value="네이버 예약시스템" />
         <put-attribute name="css" value="/WEB-INF/views/common/css.jsp" />
         <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
@@ -21,7 +21,7 @@
 	
 	<!-- Detail Page Content -->
 	<definition name="detail.content" template="/WEB-INF/views/layout/detail.jsp">
-		<put-attribute name="title" value="/WEB-INF/views/detail/promotion.jsp" />
+		<put-attribute name="title" value="/WEB-INF/views/detail/title.jsp" />
 		<put-attribute name="productInformation" value="/WEB-INF/views/detail/productInformation.jsp" />
 		<put-attribute name="event" value="/WEB-INF/views/detail/event.jsp" />
 		
@@ -47,7 +47,7 @@
 	</definition>
 	
 	<!-- My Reservation Page Content -->
-	<definition name="myresrvation.content" template="/WEB-INF/views/layout/myreservation.jsp">
+	<definition name="myreservation.content" template="/WEB-INF/views/layout/myreservation.jsp">
 		<put-attribute name="mySummary" value="/WEB-INF/views/myreservation/mySummary.jsp" />
 		<put-attribute name="myreservationList" value="/WEB-INF/views/myreservation/myreservationList.jsp" />
 		<put-attribute name="canclePopup" value="/WEB-INF/views/myreservation/canclePopup.jsp" />
@@ -75,7 +75,7 @@
 		
 	<!-- Review Write Page -->
 	<definition name="reviewWrite" extends="base-definition">
-		<put-attribute name="content" value="WEB-INF/views/layout/reviewWrite.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/layout/reviewWrite.jsp"/>
 	</definition>	
 	
 	<!-- My Reservation Page -->

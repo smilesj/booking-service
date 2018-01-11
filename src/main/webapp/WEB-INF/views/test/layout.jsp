@@ -10,7 +10,6 @@
     <div class="page">
         <tiles:insertAttribute name="header" />
         <div class="content">
-            <%-- <tiles:insertDefinition name="content" /> --%>
             <tiles:insertAttribute name="content" />
         </div>
         <tiles:insertAttribute name="footer" />

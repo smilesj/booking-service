@@ -17,4 +17,9 @@ public class TestContorller {
 	public String testList(){
 		return "list";
 	}
+	
+	@GetMapping("/list2")
+	public String testList2(){
+		return "list2";
+	}
 }

@@ -3,6 +3,6 @@
 <!DOCTYPE html>
 
         <div class="test">
-            <tiles:insertAttribute name="a" />
+            <%-- <tiles:insertAttribute name="a" /> --%>
             <tiles:insertAttribute name="c" />
         </div>

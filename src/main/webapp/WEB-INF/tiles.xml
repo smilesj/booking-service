@@ -8,18 +8,8 @@
 	<definition name="base-definition" template="/WEB-INF/views/test/layout.jsp">
         <put-attribute name="title" value="타일즈 테스트" />
         <put-attribute name="header" value="/WEB-INF/views/test/header.jsp" />
-        
-        <put-attribute name="content" value="home" type="definition" cascade="true" /> 
 		
         <put-attribute name="footer" value="/WEB-INF/views/test/footer.jsp" />
-	</definition>
-	
-	
-	<!-- Main Content -->
-	<definition name="home" extends="base-definition">
-		<put-attribute name="content" value="content1" type="definition" /> 
-		<!-- <put-attribute name="a" value="/WEB-INF/views/test/a.jsp" />
-		<put-attribute name="b" value="/WEB-INF/views/test/b.jsp" /> -->
 	</definition>
 	
 	<definition name="content1" template="/WEB-INF/views/test/content1.jsp">
@@ -28,14 +18,20 @@
 	</definition>
 	
 	<definition name="content2" template="/WEB-INF/views/test/content2.jsp">
-		<put-attribute name="a" value="/WEB-INF/views/test/a.jsp" />
-		<put-attribute name="c" value="/WEB-INF/views/test/c.jsp" />
+		<!-- <put-attribute name="a" value="/WEB-INF/views/test/a.jsp" /> -->
+		<put-attribute name="c" value="/WEB-INF/views/test/b.jsp" />
+	</definition>
+	
+	
+	<!-- Main Content -->
+	<definition name="home" extends="base-definition">
+		<put-attribute name="content" value="content1"/>
 	</definition>
 	
 	
 	<!-- Detail Content -->
 	<definition name="list" extends="base-definition">
-        <put-attribute name="content" type="definition"/>
+		<put-attribute name="content" value="content2" />
 	</definition>
 	
 </tiles-definitions>

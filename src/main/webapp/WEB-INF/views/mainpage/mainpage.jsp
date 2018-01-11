@@ -3,8 +3,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>TITLE</title>
 </head>
 <body>
-	<h2>gggg</h2>
 </body>
 </html>

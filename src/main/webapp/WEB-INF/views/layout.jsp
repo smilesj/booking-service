@@ -18,5 +18,6 @@
 		</div>
 		
 		<tiles:insertAttribute name="js" />
+		<tiles:insertAttribute name="page-js" />
 	</body>
 </html>

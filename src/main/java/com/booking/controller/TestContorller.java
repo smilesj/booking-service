@@ -11,7 +11,7 @@ import com.booking.dao.MemberDao;
 import com.booking.dto.MemberDto;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/test")
 public class TestContorller {
 	
 	private MemberDao memberDao;

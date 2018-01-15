@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.booking.dao.ProductDao">
-	<select id="selectAll" resultType="productDto">
+	<select id="selectAll" resultType="com.booking.dto.productDto">
 		SELECT DISTINCT p.id product_id, p.name product_name, p.description product_description, di.place_name, f.id file_id, f.file_name, f.save_file_name
 		FROM product p INNER JOIN display_info di ON p.id = di.product_id
 				INNER JOIN product_image pi ON p.id = pi.product_id

@@ -6,16 +6,17 @@
         <li class="item" data-category="1">
             <a class="anchor active"> <span>전체</span> </a>
         </li>
-        
 <c:forEach var="category" items="${categoryList}" varStatus="status">
-<%-- 	 <c:if test="!${status.last}">
         <li class="item" data-category="${category.id}+1">
-            <a class="anchor"> <span>${category.name }</span> </a>
-     </c:if>
-	<c:if test="${status.last}">
+	 <c:choose>
+		<c:when test="${status.last}">
             <a class="anchor last"> <span>${category.name }</span> </a>
+    	</c:when>
+	 	<c:otherwise>
+            <a class="anchor"> <span>${category.name }</span> </a>
+     	</c:otherwise>
+    </c:choose>
         </li>
-    </c:if> --%>
 </c:forEach>
     </ul>
 </div>

@@ -20,8 +20,8 @@ public class MyReservationServiceImpl implements MyReservationService {
 	}
 	
 	@Override
-	public List<MyReservationDto> selectAll() {
-		return myReservationDao.selectAll();
+	public List<MyReservationDto> selectAll(int userId) {
+		return myReservationDao.selectAll(userId);
 	}
 
 }

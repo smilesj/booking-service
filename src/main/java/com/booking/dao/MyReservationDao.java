@@ -8,5 +8,5 @@ import com.booking.dto.MyReservationDto;
 
 @Repository
 public interface MyReservationDao {
-	public List<MyReservationDto> selectAll();
+	public List<MyReservationDto> selectAll(int userId);
 }

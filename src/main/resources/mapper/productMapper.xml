@@ -7,6 +7,7 @@
 		FROM product p INNER JOIN display_info di ON p.id = di.product_id
 				INNER JOIN product_image pi ON p.id = pi.product_id
                 INNER JOIN file f ON pi.file_id = f.id
-		WHERE p.sales_start <![CDATA[<=]]> CURDATE() AND p.sales_end <![CDATA[>=]]> CURDATE()
+		WHERE p.sales_start <![CDATA[<=]]> CURDATE() AND p.sales_end <![CDATA[>=]]> CURDATE() AND pi.type = 1
+		LIMIT 6
 	</select>
 </mapper>

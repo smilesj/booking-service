@@ -24,4 +24,15 @@ public class CategoryServiceImpl implements CategoryService{
 		return categoryDao.selectAll();
 	}
 
+	@Override
+	public int getTotalCount(List<CategoryDto> list) {
+		int count = 0;
+		
+		for(CategoryDto category : list) {
+			count += category.getProductCount();
+		}
+		
+		return count;
+	}
+
 }

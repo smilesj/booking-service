@@ -82,7 +82,7 @@
 	<!-- My Reservation Page -->
 	<definition name="myreservation" extends="base-definition">
 		<put-attribute name="content" value="myreservation.content"/>
-		<put-attribute name="page-js" value="/WEB-INF/views/layout/page-js/home-js.jsp"/>
+		<put-attribute name="page-js" value="/WEB-INF/views/layout/page-js/myreservation-js.jsp"/>
 	</definition>
 		
 </tiles-definitions>

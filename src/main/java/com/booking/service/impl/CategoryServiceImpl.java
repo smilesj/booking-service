@@ -21,10 +21,6 @@ public class CategoryServiceImpl implements CategoryService{
 
 	@Override
 	public List<CategoryDto> selectAll() {
-/*		List<CategoryDto> list = categoryDao.selectAll();
-		for(CategoryDto cate : list) {
-			System.out.println(cate.getId());
-		}*/
 		return categoryDao.selectAll();
 	}
 

@@ -56,7 +56,7 @@
 	<!-- Main Page -->
 	<definition name="main" extends="base-definition">
 		<put-attribute name="content" value="main.content"/>
-		<put-attribute name="page-js" value="/WEB-INF/views/common/home-js.jsp"/>
+		<put-attribute name="page-js" value="/WEB-INF/views/layout/page-js/home-js.jsp"/>
 	</definition>
 		
 	<!-- Detail Page -->

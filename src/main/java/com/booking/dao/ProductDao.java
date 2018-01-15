@@ -9,4 +9,5 @@ import com.booking.dto.ProductDto;
 @Repository
 public interface ProductDao {
 	public List<ProductDto> selectAll();
+	public List<ProductDto> selectByCategory(int categoryId);
 }

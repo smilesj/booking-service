@@ -3,11 +3,21 @@
 
 <mapper namespace="com.booking.dao.ProductDao">
 	<select id="selectAll" resultType="com.booking.dto.ProductDto">
+		<include refid="selectProductList" />
+		LIMIT 6
+	</select>
+	
+	<select id="selectByCategory" parameterType="Integer" resultType="com.booking.dto.ProductDto">
+		<include refid="selectProductList" />
+		 	AND p.category_id = #{categoryId}
+		LIMIT 6
+	</select>
+	
+	<sql id="selectProductList">
 		SELECT DISTINCT p.id product_id, p.name product_name, p.description product_description, di.place_name, f.id file_id, f.file_name, f.save_file_name
 		FROM product p INNER JOIN display_info di ON p.id = di.product_id
 				INNER JOIN product_image pi ON p.id = pi.product_id
                 INNER JOIN file f ON pi.file_id = f.id
 		WHERE p.sales_start <![CDATA[<=]]> CURDATE() AND p.sales_end <![CDATA[>=]]> CURDATE() AND pi.type = 1
-		LIMIT 6
-	</select>
+	</sql>
 </mapper>

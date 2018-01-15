@@ -16,7 +16,9 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.booking.controller" })
+@ComponentScan(basePackages = { 
+	"com.booking.api",	
+	"com.booking.controller" })
 public class ServletContextConfig extends WebMvcConfigurerAdapter {
 	
 	@Bean

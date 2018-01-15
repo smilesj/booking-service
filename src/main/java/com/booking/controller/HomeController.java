@@ -17,8 +17,9 @@ public class HomeController {
 	private ProductService productService;
 	
 	@Autowired
-	public HomeController(CategoryService categoryService) {
+	public HomeController(CategoryService categoryService, ProductService productService) {
 		this.categoryService = categoryService;
+		this.productService = productService;
 	}
 	
 	@GetMapping("/")

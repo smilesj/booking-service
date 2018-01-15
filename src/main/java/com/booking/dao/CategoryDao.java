@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.booking.dto.CategoryDto;
 
-@Repository
+@Repository("CategoryDao")
 public interface CategoryDao {
 	public List<CategoryDto> selectAll();
 }

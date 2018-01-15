@@ -9,7 +9,7 @@ import com.booking.dao.CategoryDao;
 import com.booking.dto.CategoryDto;
 import com.booking.service.CategoryService;
 
-@Service
+@Service("CategoryService")
 public class CategoryServiceImpl implements CategoryService{
 	
 	private CategoryDao categoryDao;

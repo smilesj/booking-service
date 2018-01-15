@@ -6,18 +6,18 @@
         <li class="item" data-category="0">
             <a class="anchor active"> <span>전체</span> </a>
         </li>
-<c:forEach var="category" items="${categoryList}" varStatus="status">
-        <li class="item" data-category="${category.id}">
-	 <c:choose>
-		<c:when test="${status.last}">
-            <a class="anchor last"> <span>${category.name }</span> </a>
-    	</c:when>
-	 	<c:otherwise>
-            <a class="anchor"> <span>${category.name }</span> </a>
-     	</c:otherwise>
-    </c:choose>
-        </li>
-</c:forEach>
+	<c:forEach var="category" items="${categoryList}" varStatus="status">
+	    <li class="item" data-category="${category.id}">
+		 <c:choose>
+			<c:when test="${status.last}">
+	            <a class="anchor last"> <span>${category.name }</span> </a>
+	    	</c:when>
+		 	<c:otherwise>
+	            <a class="anchor"> <span>${category.name }</span> </a>
+	     	</c:otherwise>
+	    </c:choose>
+		</li>
+	</c:forEach>
     </ul>
 </div>
 <div class="section_event_lst">

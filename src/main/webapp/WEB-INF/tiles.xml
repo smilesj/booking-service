@@ -17,6 +17,7 @@
 	<definition name="main.content" template="/WEB-INF/views/layout/mainpage.jsp">
 		<put-attribute name="promotion" value="/WEB-INF/views/mainpage/promotion.jsp"/>
 		<put-attribute name="productList" value="/WEB-INF/views/mainpage/productList.jsp"/>
+		<put-attribute name="product-list-template" value="/WEB-INF/views/mainpage/product-list-template.jsp"/>
 	</definition>
 	
 	<!-- Detail Page Content -->

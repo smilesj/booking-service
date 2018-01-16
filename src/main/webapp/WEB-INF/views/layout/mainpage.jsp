@@ -3,4 +3,6 @@
 <div class="event">
 	<tiles:insertAttribute name="promotion" />
 	<tiles:insertAttribute name="productList" />
+	
+	<tiles:insertAttribute name="product-list-template" />
 </div>

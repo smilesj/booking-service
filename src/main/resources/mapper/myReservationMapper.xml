@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="com.booking.dao.MyReservationDao">
 	<select id="selectAll" parameterType="int" resultType="com.booking.dto.MyReservationDto">
 		SELECT i.id, i.product_id, i.general_ticket_count, i.youth_ticket_count, i.child_ticket_count, i.reservation_date, i.reservation_type, i.total_price, p.name product_name
@@ -8,7 +7,7 @@
 		WHERE user_id = #{id}
 		ORDER BY reservation_type, id DESC
 	</select>
-	
+
 	<select id="selectReservationTypeCount" parameterType="int" resultType="com.booking.dto.ReservationTypeDto">
 		SELECT reservation_type, COUNT(*) count
 		FROM reservation_info 

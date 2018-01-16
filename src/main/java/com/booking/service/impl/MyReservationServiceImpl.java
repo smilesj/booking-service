@@ -1,6 +1,8 @@
 package com.booking.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +28,29 @@ public class MyReservationServiceImpl implements MyReservationService {
 	}
 
 	@Override
-	public List<ReservationTypeDto> selectReservationTypeCount(int userId) {
-		return myReservationDao.selectReservationTypeCount(userId);
+	public Map<String, Integer> selectReservationTypeCount(int userId) {
+		List<ReservationTypeDto> list = myReservationDao.selectReservationTypeCount(userId);
+		Map<String, Integer> result = new HashMap<>();
+		int total = 0;
+		int due_requesting = 0;
+		int used = 0;
+		int refund_cancel = 0;
+		for(ReservationTypeDto dto : list) {
+			String type = dto.getReservationType();
+			if("DUE".equals(type) || "REQUESTING".equals(type)){
+				due_requesting += dto.getCount();
+			}else if("USED".equals(type)){
+				used = dto.getCount();
+			}else if("REFUND_CANCEL".equals(type)){
+				refund_cancel = dto.getCount();
+			}
+			total += dto.getCount();
+		}
+		result.put("ALL", total);
+		result.put("USED", used);
+		result.put("DUE_REQUESTING", due_requesting);
+		result.put("REFUND_CANCEL", refund_cancel);
+		return result;
 	}
 
 }

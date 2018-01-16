@@ -22,7 +22,7 @@ public class MyReservationController {
 	@GetMapping
 	public String home(Model model){
 		int userId = 10;
-		model.addAttribute("reservationType", myReservationService.selectReservationTypeCount(userId));
+		model.addAttribute("summary", myReservationService.selectReservationTypeCount(userId));
 		model.addAttribute("reservationList", myReservationService.selectAll(userId));
 		return "myreservation";
 	}

@@ -2,15 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.booking.dao.ProductDao">
-	<select id="selectAll" resultType="com.booking.dto.ProductDto">
+	<select id="selectAll" parameterType="Integer" resultType="com.booking.dto.ProductDto">
 		<include refid="selectProductList" />
-		LIMIT 6
+		<include refid="limit" />
 	</select>
 	
-	<select id="selectByCategory" parameterType="Integer" resultType="com.booking.dto.ProductDto">
+	<select id="selectByCategory" parameterType="hashmap" resultType="com.booking.dto.ProductDto">
 		<include refid="selectProductList" />
 		 	AND p.category_id = #{categoryId}
-		LIMIT 6
+		<include refid="limit" />
 	</select>
 	
 	<sql id="selectProductList">
@@ -19,5 +19,9 @@
 				INNER JOIN product_image pi ON p.id = pi.product_id
                 INNER JOIN file f ON pi.file_id = f.id
 		WHERE p.sales_start <![CDATA[<=]]> CURDATE() AND p.sales_end <![CDATA[>=]]> CURDATE() AND pi.type = 1
+	</sql>
+	
+	<sql id="limit">
+		LIMIT #{page}, 10
 	</sql>
 </mapper>

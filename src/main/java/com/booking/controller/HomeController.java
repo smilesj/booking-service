@@ -31,7 +31,7 @@ public class HomeController {
 		
 		model.addAttribute("categoryList", categoryList);
 		model.addAttribute("productCount", categoryService.getTotalCount(categoryList));
-		model.addAttribute("productList", productService.selectAll());
+		model.addAttribute("productList", productService.selectAll(0));
 		
 		return "main";
 	}

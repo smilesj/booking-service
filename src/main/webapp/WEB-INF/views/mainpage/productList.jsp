@@ -4,10 +4,12 @@
 <div class="section_event_tab">
     <ul class="event_tab_lst tab_lst_min">
         <li class="item" data-category="0">
+        	<input type="hidden" id="cate0" value="${productCount }"/>
             <a class="anchor active"> <span>전체</span> </a>
         </li>
 	<c:forEach var="category" items="${categoryList}" varStatus="status">
 	    <li class="item" data-category="${category.id}">
+	    	<input type="hidden" id="cate${category.id}" value="${category.productCount }"/>
 		 <c:choose>
 			<c:when test="${status.last}">
 	            <a class="anchor last"> <span>${category.name}</span> </a>
@@ -23,8 +25,18 @@
 <div class="section_event_lst">
      <p class="event_lst_txt">바로 예매 가능한 전시, 공연, 행사가 <span class="pink" id="product_count">${productCount}개</span> 있습니다</p>
      <div class="wrap_event_box">
+		<div class="message_outer">
+			<div class="loading_bar hide">
+				<span class="ico_loading">로딩중</span>
+			</div>
+			<div class="nodata_message _lst_none hide">
+				<p class="dsc_nodata">
+					선택하신 행사가 없습니다.<br>다른 장르를 선택해주세요.
+				</p>
+			</div>
+		</div>
          <ul class="lst_event_box" id="left_event_box">
-         	<c:forEach var="product" items="${productList}" begin="0" end="4" step="2" varStatus="status">
+         	<c:forEach var="product" items="${productList}" begin="0" end="8" step="2" varStatus="status">
               <li class="item">
                   <a href="#" class="item_book">
                       <div class="item_preview"> 
@@ -43,7 +55,7 @@
 			</c:forEach>
          </ul>
          <ul class="lst_event_box" id="right_event_box">
-         	<c:forEach var="product" items="${productList}" begin="1" end="5" step="2" varStatus="status">
+         	<c:forEach var="product" items="${productList}" begin="1" end="9" step="2" varStatus="status">
               <li class="item">
                   <a href="#" class="item_book">
                       <div class="item_preview"> 
@@ -61,10 +73,6 @@
               </li>
 			</c:forEach>
          </ul>
-         <!-- 더보기 -->
-         <div class="more">
-             <button class="btn"><span>더보기</span></button>
-         </div>
      </div>
 </div>
 

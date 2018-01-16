@@ -1,4 +1,21 @@
 @charset "utf-8";
+.message_outer {
+	width: 100%;
+	text-align: center;
+}
+.loading_bar .ico_loading {
+	display: inline-block;
+	width: 32px;
+	height: 8px;
+	background: url(../img/ico_loading.gif) no-repeat;
+	background-size: 32px 8px;
+	-webkit-background-size: 32px 8px;
+	font-size: 0;
+	line-height: 0;
+	color: transparent;
+	vertical-align: top;
+}
+
 /* common */
 html {
     min-height: 100%;
@@ -11343,8 +11360,8 @@ select {
     zoom: 1;
 }
 .event .section_event_tab .event_tab_lst {
-    overflow-y: hidden;
-    overflow-x: auto;
+    /* overflow-y: hidden;
+    overflow-x: auto; */
     position: relative;
     padding-left: 15px;
     padding-right: 15px;

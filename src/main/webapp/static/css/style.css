@@ -1,3 +1,20 @@
+.message_outer {
+	width: 100%;
+	text-align: center;
+}
+.loading_bar .ico_loading {
+	display: inline-block;
+	width: 32px;
+	height: 8px;
+	background: url(../img/ico_loading.gif) no-repeat;
+	background-size: 32px 8px;
+	-webkit-background-size: 32px 8px;
+	font-size: 0;
+	line-height: 0;
+	color: transparent;
+	vertical-align: top;
+}
+
 @font-face {
     font-family: "Naver booking Icons";
     src: url('../font/Naver-booking-Icons.woff') format('woff');

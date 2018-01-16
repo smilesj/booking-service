@@ -23,7 +23,7 @@ public class ProductRestController {
 	}
 	
 	@GetMapping
-	public List<ProductDto> getList(@RequestParam int categoryId) {
-		return productService.getList(categoryId);
+	public List<ProductDto> getList(@RequestParam int categoryId, @RequestParam int page) {
+		return productService.getList(categoryId, page);
 	}
 }

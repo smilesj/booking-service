@@ -9,4 +9,5 @@ import com.booking.dto.ReservationTypeDto;
 public interface MyReservationService {
 	public List<MyReservationDto> selectAll(int userId);
 	public Map<String, Integer> selectReservationTypeCount(int userId);
+	public void reservationRefundCancel(int reservationId);
 }

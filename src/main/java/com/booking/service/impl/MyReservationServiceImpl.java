@@ -53,4 +53,10 @@ public class MyReservationServiceImpl implements MyReservationService {
 		return result;
 	}
 
+	public void reservationRefundCancel(int reservationId) {
+		HashMap<String, Object> param = new HashMap<>();
+		param.put("id", reservationId);
+		param.put("reservation_type", "REFUND_CANCEL");
+		myReservationDao.updateReservationType(param);
+	}
 }

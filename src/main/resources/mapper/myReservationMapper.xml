@@ -14,4 +14,11 @@
 		WHERE user_id = #{id}
 		GROUP BY reservation_type
 	</select>
+	
+	<update id="updateReservationType" parameterType="java.util.Map">
+		UPDATE reservation_info
+		SET
+		reservation_type = #{reservation_type}
+		WHERE id = #{id}
+	</update>
 </mapper>

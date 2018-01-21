@@ -9,13 +9,16 @@
 		<c:forEach var="reservation" items="${reservationList }" varStatus="status">
 	  		<c:if test="${status.index == 0 or (status.index > 0 and reservationList[status.index-1].reservationType ne reservation.reservationType )}">
 	        <c:if test="${reservation.reservationType eq 'REQUESTING'}">
-	        <li class="card">
+	        <li class="card" data-reservation-type="requesting">
 	        </c:if>
 	        <c:if test="${reservation.reservationType eq 'DUE'}">
-	        <li class="card confirmed">
+	        <li class="card confirmed" data-reservation-type="due">
 	        </c:if>
-	        <c:if test="${(reservation.reservationType eq 'USED') or (reservation.reservationType eq 'REFUND_CANCEL')}">
-	        <li class="card used">
+	        <c:if test="${reservation.reservationType eq 'USED'}">
+	        <li class="card used" data-reservation-type="used">
+	        </c:if>
+	        <c:if test="${reservation.reservationType eq 'REFUND_CANCEL'}">
+	        <li class="card used" data-reservation-type="refund_cancel">
 	        </c:if>
 				<div class="link_booking_details">
 					<div class="card_header">

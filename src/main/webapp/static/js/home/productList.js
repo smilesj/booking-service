@@ -18,7 +18,7 @@ var ProductList = (function() {
 	}
 	
 	function bindEvents() {
-		$cateUl.on('click', 'li.item', changeCategory);
+		$cateUl.on('click', 'li', changeCategory);
 		$(window).scroll(scrollUpdate);
 	}
 	
@@ -38,14 +38,14 @@ var ProductList = (function() {
 		let count = $('#cate'+$this.data('category')).val();
 		$('#product_count').html(count+"개");		
 	}
-	
+
 	function getProduct(categoryId, page) {
-		$loadingbar.removeClass('hide');
 		if(flag)
 			return;
 		let url = "/categories/" + categoryId + "/products?page=" + page;
 		let data = cachedData[url];
 		
+		$loadingbar.removeClass('hide');
 		if(data) {
 			setProductList(data);
 			return;
@@ -56,8 +56,8 @@ var ProductList = (function() {
 					if(data.length > 0){
 						setProductList(data);
 					}
-					else
-						$('.nodata_message').removeClass('hide');
+					else 
+						$('.nodata_message').addClass('hide');
 					
 					cachedData[url] = data;
 				},

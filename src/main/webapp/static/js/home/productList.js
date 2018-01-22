@@ -43,9 +43,7 @@ var ProductList = (function() {
 	function getProduct(categoryId, page) {
 		if(flag)
 			return;
-		
-		//let url = "/categories/" + categoryId + "/products?page=" + page;
-		let url = "/categories/" + categoryId + "/products";
+		let url = "/categories/" + categoryId + "/products?page=" + page;
 		let data = cachedData[url];
 		
 		$loadingbar.removeClass('hide');
@@ -57,17 +55,14 @@ var ProductList = (function() {
 		$.get(url).then(
 				// 성공
 				function(data) {
-					if(data.length > 0) {
-						$('.nodata_message').removeClass('hide');
+					if(data.length > 0){
 						setProductList(data);
+						//flag = true;
 					}
-					else { console.log('aaa > ' + data.length); console.log(flag);
+					else 
 						$('.nodata_message').addClass('hide');
-					}
 					
 					cachedData[url] = data;
-					if(result.length < 11)
-						flag = true;
 				},
 				// 실패
 				function(request, status, error) {
@@ -77,6 +72,9 @@ var ProductList = (function() {
 	}
 	
 	function setProductList(result) {
+		flag = false;
+		if(result.length < 11)
+			flag = true;
 		let left = [];
 		let right = [];
 		let length = (result.length == 11 ? result.length - 1 : result.length);

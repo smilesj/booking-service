@@ -42,10 +42,8 @@ var ProductList = (function() {
 	
 	function getProduct(categoryId, page) {
 		$loadingbar.removeClass('hide');
-		
 		if(flag)
 			return;
-	
 		let url = "/categories/" + categoryId + "/products?page=" + page;
 		let data = cachedData[url];
 		
@@ -57,8 +55,10 @@ var ProductList = (function() {
 		$.get(url).then(
 				// 성공
 				function(data) {
-					if(data.length > 0)
+					if(data.length > 0){
 						setProductList(data);
+						flag = true;
+					}
 					else
 						$('.nodata_message').removeClass('hide');
 					
@@ -72,9 +72,9 @@ var ProductList = (function() {
 	}
 	
 	function setProductList(result) {
+		flag = false;
 		if(result.length < 11)
 			flag = true;
-		
 		let left = [];
 		let right = [];
 		let length = (result.length == 11 ? result.length - 1 : result.length);

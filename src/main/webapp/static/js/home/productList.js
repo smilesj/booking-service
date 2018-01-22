@@ -26,9 +26,8 @@ var ProductList = (function() {
 		page = 0;
 		flag = false;
 		currentCate = $(this).data('category');
-		
 		setCategory($(this));
-		getProduct(currentCate, page);		
+		getProduct(currentCate, page);
 	}
 	
 	function setCategory($this) {
@@ -51,13 +50,11 @@ var ProductList = (function() {
 			setProductList(data);
 			return;
 		}
-		
 		$.get(url).then(
 				// 성공
 				function(data) {
 					if(data.length > 0){
 						setProductList(data);
-						//flag = true;
 					}
 					else 
 						$('.nodata_message').addClass('hide');
@@ -68,7 +65,9 @@ var ProductList = (function() {
 				function(request, status, error) {
 					console.log("code:"+request.status+"\n"+"error:"+error);
 				}
-		);		
+		);
+
+		
 	}
 	
 	function setProductList(result) {

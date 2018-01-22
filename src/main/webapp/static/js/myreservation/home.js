@@ -7,6 +7,21 @@ $(".my_summary li").on("click", function(){
 	$(this).parent().find("li").eq(summaryIndex).find("a").removeClass("on");
 	summaryIndex = $(this).index();
 	$(this).find("a").addClass("on");
+	
+	var list_cards = $(".list_cards li");
+	if(summaryIndex == 0){
+		list_cards.removeClass("hide");
+	}else if(summaryIndex == 1){
+		list_cards.addClass("hide");
+		$(".list_cards li[data-reservation-type=requesting]").removeClass("hide");
+		$(".list_cards li[data-reservation-type=due]").removeClass("hide");
+	}else if(summaryIndex == 2){
+		list_cards.addClass("hide");
+		$(".list_cards li[data-reservation-type=used]").removeClass("hide");
+	}else if(summaryIndex == 3){
+		list_cards.addClass("hide");
+		$(".list_cards li[data-reservation-type=refund_cancel]").removeClass("hide");
+	}
 });
 
 

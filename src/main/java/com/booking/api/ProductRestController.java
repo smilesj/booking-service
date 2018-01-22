@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +13,7 @@ import com.booking.dto.ProductDto;
 import com.booking.service.ProductService;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/categories")
 public class ProductRestController {
 
 	private ProductService productService;
@@ -22,8 +23,8 @@ public class ProductRestController {
 		this.productService = productService;
 	}
 	
-	@GetMapping
-	public List<ProductDto> getList(@RequestParam int categoryId, @RequestParam int page) {
+	@GetMapping("/{id}/products")
+	public List<ProductDto> getList(@PathVariable("id") int categoryId, @RequestParam int page) {
 		return productService.getList(categoryId, page);
 	}
 }

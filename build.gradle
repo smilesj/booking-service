@@ -45,7 +45,7 @@ dependencies {
 	compile 'org.apache.commons:commons-dbcp2:2.1.1'
 	
 	// lombok
-	compile 'org.projectlombok:lombok:1.16.6'
+	compile 'org.projectlombok:lombok:1.16.18'
 	
 	// jackson
 	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.2'

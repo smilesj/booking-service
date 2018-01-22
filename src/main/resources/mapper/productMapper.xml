@@ -22,6 +22,6 @@
 	</sql>
 	
 	<sql id="limit">
-		LIMIT #{page}, 10
+		LIMIT #{page}, 11
 	</sql>
 </mapper>

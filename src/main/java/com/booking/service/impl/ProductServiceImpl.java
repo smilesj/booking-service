@@ -13,7 +13,7 @@ import com.booking.service.ProductService;
 @Service
 public class ProductServiceImpl implements ProductService{
 	
-	final static int PRODUCT_UNIT = 11;
+	final static int PRODUCT_UNIT = 10;
 	private ProductDao productDao;
 	
 	@Autowired

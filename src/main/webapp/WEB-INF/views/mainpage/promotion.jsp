@@ -5,14 +5,14 @@
     <div class="group_visual">
         <div class="container_visual">
             <div class="prev_e img_btn">
-                <div class="prev_inn">
+                <div class="prev_inn" id="btn_prev">
                     <a href="#" class="btn_pre_e" title="이전"> 
                     	<i class="spr_book_event spr_event_pre">이전</i> 
                     </a>
                 </div>
             </div>
             <div class="nxt_e img_btn">
-                <div class="nxt_inn">
+                <div class="nxt_inn" id="btn_nxt">
                     <a href="#" class="btn_nxt_e" title="다음"> 
                     	<i class="spr_book_event spr_event_nxt">다음</i> 
                     </a>

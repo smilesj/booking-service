@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.booking.dao.ProductDao;
+import com.booking.dao.ProductPriceDao;
 import com.booking.dto.ProductDto;
+import com.booking.dto.ProductSummaryDto;
 import com.booking.service.ProductService;
 
 @Service
@@ -15,10 +17,12 @@ public class ProductServiceImpl implements ProductService{
 	
 	final static int PRODUCT_UNIT = 10;
 	private ProductDao productDao;
+	private ProductPriceDao productPriceDao;
 	
 	@Autowired
-	public ProductServiceImpl(ProductDao productDao) {
+	public ProductServiceImpl(ProductDao productDao, ProductPriceDao productPriceDao) {
 		this.productDao = productDao;
+		this.productPriceDao = productPriceDao;
 	}
 
 	@Override
@@ -38,6 +42,16 @@ public class ProductServiceImpl implements ProductService{
 		map.put("categoryId", categoryId);
 		map.put("page", page * PRODUCT_UNIT);
 		return productDao.selectByCategory(map);
+	}
+
+	@Override
+	public ProductSummaryDto selectProductSummary(int productId) {
+		return productDao.selectProductSummary(productId);
+	}
+
+	@Override
+	public List<ProductPriceDao> selectProductPrice(int productId) {
+		return productPriceDao.selectProductPrice(productId);
 	}
 
 }

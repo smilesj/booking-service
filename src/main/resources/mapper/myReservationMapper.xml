@@ -21,4 +21,5 @@
 		reservation_type = #{reservation_type}
 		WHERE id = #{id}
 	</update>
+	
 </mapper>

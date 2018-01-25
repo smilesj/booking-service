@@ -41,6 +41,14 @@
 		<put-attribute name="bookingForm" value="/WEB-INF/views/reserve/bookingForm.jsp" />	
 	</definition>
 	
+	<!-- Review Write Page Content -->
+	<definition name="reviewWrite.content" template="/WEB-INF/views/layout/reviewWrite.jsp">
+		<put-attribute name="reviewTitle" value="/WEB-INF/views/reviewWrite/reviewTitle.jsp" />
+		<put-attribute name="starpoint" value="/WEB-INF/views/reviewWrite/starpoint.jsp" />
+		<put-attribute name="reviewForm" value="/WEB-INF/views/reviewWrite/reviewForm.jsp" />
+		<put-attribute name="photoForm" value="/WEB-INF/views/reviewWrite/photoForm.jsp" />
+	</definition>
+	
 	<!-- Review List Page Content -->
 	<definition name="review.content" template="/WEB-INF/views/layout/review.jsp">
 		<put-attribute name="grade" value="/WEB-INF/views/review/grade.jsp" />
@@ -77,7 +85,8 @@
 		
 	<!-- Review Write Page -->
 	<definition name="reviewWrite" extends="base-definition">
-		<put-attribute name="content" value="/WEB-INF/views/layout/reviewWrite.jsp"/>
+		<put-attribute name="content" value="reviewWrite.content"/>
+		<put-attribute name="page-js" value="/WEB-INF/views/layout/page-js/reviewWrite-js.jsp"/>
 	</definition>	
 	
 	<!-- My Reservation Page -->

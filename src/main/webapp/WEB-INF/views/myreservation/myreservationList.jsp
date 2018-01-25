@@ -25,8 +25,22 @@
 					    <div class="left"></div>
 					    <div class="middle">
 					        <!--[D] 예약 신청중: .ico_clock, 예약확정&이용완료: .ico_check2, 취소된 예약: .ico_cancel 추가 spr_book -->
+					        <c:if test="${reservation.reservationType eq 'REQUESTING'}">
+					        <i class="spr_book2 ico_clock"></i>
+					        <span class="tit">예약신청</span>
+					        </c:if>
+					        <c:if test="${reservation.reservationType eq 'DUE'}">
 					        <i class="spr_book2 ico_check2"></i>
-					        <span class="tit">${reservation.reservationType}</span>
+					        <span class="tit">예약확정</span>
+					        </c:if>
+					        <c:if test="${reservation.reservationType eq 'USED'}">
+					        <i class="spr_book2 ico_check2"></i>
+					        <span class="tit">이용완료</span>
+					        </c:if>
+					        <c:if test="${reservation.reservationType eq 'REFUND_CANCEL'}">
+					        <i class="spr_book2 ico_cancel"></i>
+					        <span class="tit">취소 및 환불</span>
+					        </c:if>
 					    </div>
 					    <div class="right"></div>
 					</div>
@@ -89,7 +103,7 @@
 					        <div class="right"></div>
 					    </div>
 					</a>
-					<a href="/product-detail/${reservation.productId }" class="fn fn-share1 naver-splugin btn_goto_share" title="공유하기"></a>
+					<a href="/products/${reservation.productId }" class="fn fn-share1 naver-splugin btn_goto_share" title="공유하기"></a>
 				</article>
 			<c:if test="${status.index == reservationList.size()-1 or (status.index < reservationList.size()-1 and reservationList[status.index+1].reservationType ne reservation.reservationType )}">
 			</li>

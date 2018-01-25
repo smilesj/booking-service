@@ -76,6 +76,7 @@
 	<!-- Reserve Page -->
 	<definition name="reserve" extends="base-definition">
 		<put-attribute name="content" value="reserve.content"/>
+		<put-attribute name="page-js" value="/WEB-INF/views/layout/page-js/reserve-js.jsp"/>
 	</definition>
 		
 	<!-- Review List Page -->

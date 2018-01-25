@@ -24,4 +24,11 @@
 	<sql id="limit">
 		LIMIT #{page}, 11
 	</sql>
+	
+	<select id="selectProductSummary" parameterType="Integer" resultType="com.booking.dto.ProductSummaryDto">
+		SELECT p.*, d.*
+		FROM product p
+		INNER JOIN display_info d ON p.id = d.product_id
+		WHERE p.id = #{productId}
+	</select>
 </mapper>

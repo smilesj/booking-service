@@ -26,7 +26,7 @@
 	</sql>
 	
 	<select id="selectProductSummary" parameterType="Integer" resultType="com.booking.dto.ProductSummaryDto">
-		SELECT p.*, d.*
+		SELECT p.id, p.name, d.observation_time, d.display_start, d.display_end, d.place_name, d.place_lot, d.place_street
 		FROM product p
 		INNER JOIN display_info d ON p.id = d.product_id
 		WHERE p.id = #{productId}

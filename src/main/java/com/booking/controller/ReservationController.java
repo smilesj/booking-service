@@ -24,7 +24,7 @@ public class ReservationController {
 	@GetMapping("/products/{productId}")
 	public String view(Model model, @PathVariable int productId){
 		model.addAttribute("product", productService.selectProductSummary(productId));
-		model.addAttribute("price", productService.selectProductPrice(productId));
+		model.addAttribute("prices", productService.selectProductPrice(productId));
 		return "reserve";
 	}
 	

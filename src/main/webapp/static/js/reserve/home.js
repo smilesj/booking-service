@@ -1,34 +1,46 @@
 $(function () {
-	console.log("reserve!")
-    var tickets = []
+	console.log("reserve!");
+    var tickets = [];
     $(".qty").each(function (i, e) {
-        tickets.push(new Ticket('#' + $(e).attr('id')));
+    	tickets.push(new Ticket('#' + $(e).attr('id')));
     });
 });
 
 class Ticket {
-
 	constructor(id){
 		this.root = id;
-		this.count = 0;
+		this._count = 0;
+		this._price = parseInt($(this.root).find(".price").html().replace(",", ""));
+		this.$btnPlus = $(this.root).find(".ico_plus3");
+		this.$btnMinus = $(this.root).find(".ico_minus3");
+		this.$inputCount = $(this.root).find(".count_control_input");
+		this.$totalPrice = $(this.root).find(".total_price");
 		this.bindEvents();
-		console.log(id+ " ticket create!");
 	}
 	
-	function bindEvents(){
-		this.on("click", ".ico_minus3", this.minus.bind(this));
-		this.on("click", ".ico_plus3", this.plus.bind(this));
+	bindEvents(){
+		this.$btnPlus.on("click", this.plusCount.bind(this));
+		this.$btnMinus.on("click", this.minusCount.bind(this));
 	}
 	
-	function plus(){
-		this.count++;
-		$(this).find(".total_price").html(this.count);
-		console.log(this.count);
+	plusCount(){
+		this._count++;
+		this.$inputCount.val(this._count);
+		this.$totalPrice.html(this._count*this._price);
+		this.$totalPrice.parent().addClass("on_color");
 	}
 	
-	function minus(){
-		this.count--;
-		$(this).find(".total_price").html(this.count);
-		console.log(this.count);
+	minusCount(){
+		if(this._count < 1){
+			return;
+		}
+		this._count--;
+		this.$inputCount.val(this._count);
+		this.$totalPrice.html(this._count*this._price);
+		if(this._count < 1){
+			this.$totalPrice.parent().removeClass("on_color");
+		}
 	}
+	
+	
 }

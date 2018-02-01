@@ -28,6 +28,7 @@ class Ticket {
 		this.$inputCount.val(this._count);
 		this.$totalPrice.html(this._count*this._price);
 		this.$totalPrice.parent().addClass("on_color");
+		this.$btnMinus.removeClass("disabled");
 	}
 	
 	minusCount(){
@@ -38,6 +39,7 @@ class Ticket {
 		this.$inputCount.val(this._count);
 		this.$totalPrice.html(this._count*this._price);
 		if(this._count < 1){
+			this.$btnMinus.addClass("disabled");
 			this.$totalPrice.parent().removeClass("on_color");
 		}
 	}

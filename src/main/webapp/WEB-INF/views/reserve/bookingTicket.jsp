@@ -28,16 +28,5 @@
              </strong> <strong class="product_price"> <span class="price"><fmt:formatNumber value="${price.price * (1-price.discountRate) }" pattern="#,###"/></span> <span class="price_type">원</span> </strong> <em class="product_dsc"><fmt:formatNumber value="${price.price }" pattern="#,###"/>원 (<fmt:formatNumber value="${price.discountRate*100 }" pattern=""/>% 할인가)</em> </div>
         </div>
     	</c:forEach>
-<!--         <div class="qty">
-            <div class="count_control">
-                <div class="clearfix">
-                    <a href="#" class="btn_plus_minus spr_book2 ico_minus3" title="빼기"> </a> <input type="tel" class="count_control_input" value="3" readonly title="수량">
-                    <a href="#" class="btn_plus_minus spr_book2 ico_plus3" title="더하기">
-                    </a>
-                </div>
-                <div class="individual_price on_color"><span class="total_price">123,000</span><span class="price_type">원</span></div>
-            </div>
-            <div class="qty_info_icon"> <strong class="product_amount"> <span>청소년2</span> </strong> <strong class="product_price"> <span class="price">8,500</span> <span class="price_type">원</span> </strong> <em class="product_dsc">8,500원 (15% 할인가)</em> </div>
-        </div> -->
     </div>
 </div>

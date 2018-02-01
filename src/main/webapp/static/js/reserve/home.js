@@ -4,7 +4,37 @@ $(function () {
     $(".qty").each(function (i, e) {
     	tickets.push(new Ticket('#' + $(e).attr('id')));
     });
+    BookingForm.init();
 });
+
+var BookingForm = (function(){
+	function init(){
+		bindEvents();
+	}
+	
+	function bindEvents(){
+		$(".agreement").on("click", ".btn_agreement", clickAgreement);
+	}
+	
+	function clickAgreement(){
+		$(this).parent().toggleClass("open");
+		$(this).find(".fn").toggleClass("fn-up2");
+		$(this).find(".fn").toggleClass("fn-down2");
+	
+// 		".btn_text" > 보기, 닫기 --> 첫번째 func일 경우 display:none으로 보이지 않음		
+//		$(this).find(".btn_text").toggle(function(e) {
+//			e.preventDefault();
+//		    $(this).text('Before');
+//		}, function() {
+//		    $(this).text('After');
+//		});
+
+	}
+	
+	return {
+		init : init
+	}
+})();
 
 class Ticket {
 	constructor(id){
